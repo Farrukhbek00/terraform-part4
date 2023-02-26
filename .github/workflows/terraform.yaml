@@ -9,7 +9,11 @@ on:
       instance_type:
         description: Instance type
         default: 't1.micro'
+        type: choice
         required: true
+        options:
+          - "t1.micro"
+          - "t2.micro"
 
 jobs:
   terraform:
