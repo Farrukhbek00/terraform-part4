@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      instance_type:
+        description: Instance type
+        default: 't1.micro'
+        required: true
 
 jobs:
   terraform:
@@ -24,7 +30,7 @@ jobs:
         run: |
           aws s3 mb s3://farruh-tfstate-actions
         if: steps.check.outputs.exists == 'false'
-
+        
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
@@ -37,7 +43,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -no-color
+        run: terraform plan -var="instance_type=${{ github.event.inputs.instance_type }}"
 
       - name: Terraform Apply
         run: terraform apply -auto-approve

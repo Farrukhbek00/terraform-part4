@@ -17,3 +17,9 @@ variable "EC2_USER" {
 variable "PUBLIC_KEY_PATH" {
   default = "~/.ssh/id_rsa.pub"
 }
+
+variable "instance_type" {
+ type = string
+ default = "t1.micro"
+ description = "EC2 instance type"
+}

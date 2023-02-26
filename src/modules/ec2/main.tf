@@ -1,6 +1,6 @@
 locals {
     instances = {
-        instance_type = "t1.micro"
+        instance_type = var.instance_type
         public_tag    = "Public-ec2"
     }
 }

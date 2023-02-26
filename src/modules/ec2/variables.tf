@@ -13,3 +13,9 @@ variable "subnet_public_id" {
 variable "sg_public_id" {
   type = any
 }
+
+variable "instance_type" {
+ type = string
+ default = "t1.micro"
+ description = "EC2 instance type"
+}
