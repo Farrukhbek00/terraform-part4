@@ -49,12 +49,12 @@ jobs:
         id: init
         run: terraform init
 
-      - name: Terraform Plan
-        id: plan
-        run: terraform plan -var="instance_type=${{ github.event.inputs.instance_type }}"
+      # - name: Terraform Plan
+      #   id: plan
+      #   run: terraform plan -var="instance_type=${{ github.event.inputs.instance_type }}"
 
-      - name: Terraform Apply
-        run: terraform apply -auto-approve -var="instance_type=${{ github.event.inputs.instance_type }}"
+      # - name: Terraform Apply
+      #   run: terraform apply -auto-approve -var="instance_type=${{ github.event.inputs.instance_type }}"
 
-      # - name: Terraform Destroy
-      #   run: terraform destroy -auto-approve
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve
