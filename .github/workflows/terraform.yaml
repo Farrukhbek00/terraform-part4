@@ -49,21 +49,21 @@ jobs:
         id: init
         run: terraform init
 
-      - name: Terraform Plan with workflow dispatch
-        if: github.event_name == 'workflow_dispatch'
-        run: terraform plan
+      # - name: Terraform Plan with workflow dispatch
+      #   if: github.event_name == 'workflow_dispatch'
+      #   run: terraform plan
       
-      - name: Terraform Plan on push
-        if: github.event_name != 'workflow_dispatch'
-        run: terraform plan
+      # - name: Terraform Plan on push
+      #   if: github.event_name != 'workflow_dispatch'
+      #   run: terraform plan
 
-      - name: Terraform Apply with workflow dispatch
-        if: github.event_name == 'workflow_dispatch'
-        run: terraform apply -auto-approve
+      # - name: Terraform Apply with workflow dispatch
+      #   if: github.event_name == 'workflow_dispatch'
+      #   run: terraform apply -auto-approve
 
-      - name: Terraform Apply on push
-        if: github.event_name != 'workflow_dispatch'
-        run: terraform apply -auto-approve
+      # - name: Terraform Apply on push
+      #   if: github.event_name != 'workflow_dispatch'
+      #   run: terraform apply -auto-approve
 
-      # - name: Terraform Destroy
-      #   run: terraform destroy -auto-approve
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve
