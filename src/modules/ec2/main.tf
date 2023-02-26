@@ -11,7 +11,7 @@ resource "aws_instance" "Public-ec2" {
 
     subnet_id              = "${var.subnet_public_id}"
     vpc_security_group_ids = ["${var.sg_public_id}"]
-    key_name               = "key"
+    key_name               = "${aws_key_pair.key_pair.id}"
 
     tags = {
         Name: "Public-ec2-${count.index + 1}"
