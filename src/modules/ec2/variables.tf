@@ -16,7 +16,7 @@ variable "sg_public_id" {
 
 variable "instance_type" {
  type = string
- default = "t2.micro"
+ default = "t1.micro"
  description = "EC2 instance type"
 }
 
