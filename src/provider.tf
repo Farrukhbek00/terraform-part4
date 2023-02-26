@@ -4,7 +4,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "farruh-tfstate-actions"
+    bucket         = "farruh-tfstate-actions-2"
     key            = "application.tf"
     region         = "eu-west-1"
   }
