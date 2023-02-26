@@ -14,5 +14,6 @@ module "ec2" {
   subnet_public_id   = module.networking.subnet_public_id
   sg_public_id       = module.sg.sg_public_id
   instance_type      = var.instance_type
+  instance_count     = var.instance_count
 }
 

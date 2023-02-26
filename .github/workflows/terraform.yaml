@@ -14,6 +14,10 @@ on:
         options:
           - "t1.micro"
           - "t2.micro"
+      instance_count:
+        description: Instance count
+        default: '1'
+        required: true
 
 jobs:
   terraform:
@@ -47,7 +51,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -var="instance_type=${{ github.event.inputs.instance_type }}"
+        run: terraform plan -var="instance_type=${{ github.event.inputs.instance_type }},instance_count=${{ github.event.inputs.instance_count }}" 
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve -var="instance_type=${{ github.event.inputs.instance_type }}"
+        run: terraform apply -auto-approve -var="instance_type=${{ github.event.inputs.instance_type }},instance_count=${{ github.event.inputs.instance_count }}" 

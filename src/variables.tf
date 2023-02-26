@@ -23,3 +23,7 @@ variable "instance_type" {
  default = "t1.micro"
  description = "EC2 instance type"
 }
+
+variable "instance_count" {
+  default = "2"
+}
