@@ -55,6 +55,3 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -var="instance_type=${{ github.event.inputs.instance_type }}"
-
-      - name: Terraform Destroy
-        run: terraform destroy -auto-approve 
