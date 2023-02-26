@@ -5,7 +5,7 @@ locals {
 }
 
 resource "aws_instance" "Public-ec2" {
-    count         = var.instance_count
+    # count         = var.instance_count
     ami           = "${lookup(var.ami, var.region)}"
     instance_type = local.instances.instance_type
 
@@ -14,7 +14,7 @@ resource "aws_instance" "Public-ec2" {
     key_name               = "${aws_key_pair.key_pair.id}"
 
     tags = {
-        Name: "Public-ec2-${count.index + 1}"
+        Name: "Public-ec2"
     }
 }
 
