@@ -51,7 +51,7 @@ jobs:
 
       - name: Terraform Plan with workflow dispatch
         if: github.event_name == 'workflow_dispatch'
-        run: terraform plan -var="instance_count=${{ github.event.inputs.instance_count }}"
+        run: terraform plan
       
       - name: Terraform Plan on push
         if: github.event_name != 'workflow_dispatch'
@@ -59,7 +59,7 @@ jobs:
 
       - name: Terraform Apply with workflow dispatch
         if: github.event_name == 'workflow_dispatch'
-        run: terraform apply -auto-approve -var="instance_count=${{ github.event.inputs.instance_count }}"
+        run: terraform apply -auto-approve
 
       - name: Terraform Apply on push
         if: github.event_name != 'workflow_dispatch'
