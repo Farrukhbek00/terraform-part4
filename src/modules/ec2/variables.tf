@@ -16,10 +16,10 @@ variable "sg_public_id" {
 
 variable "instance_type" {
  type = string
- default = "t1.micro"
+ default = "t2.micro"
  description = "EC2 instance type"
 }
 
 variable "instance_count" {
-  default = "2"
+  default = "3"
 }
