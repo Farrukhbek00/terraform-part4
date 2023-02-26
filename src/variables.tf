@@ -20,7 +20,7 @@ variable "PUBLIC_KEY_PATH" {
 
 variable "instance_type" {
  type = string
- default = "t2.micro"
+ default = "t1.micro"
  description = "EC2 instance type"
 }
 
