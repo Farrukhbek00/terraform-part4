@@ -1,7 +1,6 @@
 locals {
     instances = {
         instance_type = var.instance_type
-        public_tag    = "Public-ec2-${count.index + 1}"
     }
 }
 
@@ -15,7 +14,7 @@ resource "aws_instance" "Public-ec2" {
     key_name               = "${aws_key_pair.key_pair.id}"
 
     tags = {
-        Name: local.instances.public_tag
+        Name: "Public-ec2-${count.index + 1}"
     }
 }
 
