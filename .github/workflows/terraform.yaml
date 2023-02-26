@@ -50,12 +50,10 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan with workflow dispatch
-        id: plan
         if: github.event_name == 'workflow_dispatch'
         run: terraform plan -var="instance_type=${{ github.event.inputs.instance_type }}"
       
       - name: Terraform Plan on push
-        id: plan
         if: github.event_name != 'workflow_dispatch'
         run: terraform plan
 
